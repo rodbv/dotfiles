@@ -1,0 +1,144 @@
+################################################################################
+# Constant
+################################################################################
+snippet angConstant
+	(function () {
+	    'use strict';
+
+		var $3 = {
+			${0}
+		};
+
+
+		angular.module('${1:module-name}', [])
+			.constant('${2:CONSTANT_CAPITAL_NAME}', ${3:constantFunction});
+	})();
+
+################################################################################
+# Controller
+################################################################################
+snippet angController
+	(function () {
+	    'use strict';
+
+		var $2 = function () {
+			var vm = this;
+
+		};
+
+		$2.\$inject = [];
+
+
+		angular.module('${1:module-name}')
+			.controller('${2:ControllerFunction}', $2);
+	})();
+
+################################################################################
+# Controller
+################################################################################
+snippet angDirective
+	(function () {
+		'use strict';
+
+		var $2 = function () {
+			var linkFunction = function (scope, element, attributes) {
+				${0}
+			};
+
+			linkFunction.\$inject = ['scope', 'element', 'attributes'];
+
+			return {
+				restrict: 'E',
+				link: linkFunction
+			};
+		};
+
+		$2.\$inject = [];
+
+
+		angular.module('${1:module-name}', [])
+			.directive('${2:directiveName}', $2);
+	})();
+
+################################################################################
+# Factory
+################################################################################
+snippet angFactory
+	(function () {
+	    'use strict';
+
+		var $2 = function (\$http) {
+			var ${3:factoryAvailableFunction} = function () {
+				${0}
+			};
+
+
+			return {
+				$3: $3
+			};
+		};
+
+		$2.\$inject = ['\$http'];
+
+
+		angular.module('${1:module-name}', [])
+			.factory('${2:FactoryFunction}', $2);
+	})();
+
+################################################################################
+# Route
+################################################################################
+snippet angRoute
+	(function () {
+	    'use strict';
+
+		var $2 = function (\$stateProvider) {
+			\$stateProvider
+				.state('${3:state.name}', {
+					url: '/${4:route/url/name}',
+					templateUrl: '$4/$4Tpl.html',
+					controller: '${5:ControllerName}Ctrl as vm'
+				});
+		};
+
+		$2.\$inject = ['\$stateProvider'];
+
+
+		angular.module('${1:module-name}')
+			.config(${2:routeName});
+	})();
+
+################################################################################
+# Tests
+################################################################################
+snippet angTests
+	/* globals beforeEach, mock, inject, describe, it, expect */
+
+	(function () {
+		'use strict';
+
+	    var ${1:TargetOnModule};
+
+		describe('$1 Tests ::', function () {
+			beforeEach(angular.mock.module('${2:module-name}'));
+
+			/* jscs: disable */
+			beforeEach(inject(function (_$1_) {
+				$1 = _$1_;
+			}));
+			/* jscs: enable */
+
+
+			describe('Check Injected Modules ::', function () {
+				it('$1 module should exist', function () {
+					expect($1).to.exists;
+				});
+			});
+
+			describe('$1 Expectations ::', function () {
+				it('${0:Should description test}', function () {
+					expect(true).to.equal(true);
+				});
+			});
+		});
+	})();
