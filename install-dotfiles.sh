@@ -2,8 +2,8 @@
 
 
 # Make some installs
-apt-get update -y
-apt-get install -y apt-utils git zsh vim tmux fontconfig build-essential libpq-dev
+sudo apt-get update -y
+sudo apt-get install -y apt-utils git zsh vim tmux fontconfig build-essential libpq-dev
 
 # Reduce image size
 rm -rf /var/lib/apt/lists/*
