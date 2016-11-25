@@ -1,6 +1,32 @@
 " Bundle "justinmk/vim-sneak"
-" Bundle "rking/ag.vim"
-" Bundle "vim-scripts/IndexedSearch"
 " Bundle "nelstrom/vim-visual-star-search"
-" Bundle "skwp/greplace.vim"
 " Bundle "Lokaltog/vim-easymotion"
+
+
+" #############################################################################
+" # Searcher (Silver Searcher)
+" #############################################################################
+" Use ag over grep
+Bundle "rking/ag.vim"
+let g:agp_rg="ag\ --nogroup\ --nocolor\ --column"
+
+" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+" ag is fast enough that CtrlP doesn't need to cache
+
+
+" #############################################################################
+" # Searcher info
+" #############################################################################
+Bundle "vim-scripts/IndexedSearch"
+
+
+" #############################################################################
+" # Searcher and replace across many files
+" #############################################################################
+Bundle "skwp/greplace.vim"
+
+set grepprg=ag
+
+let g:grep_cmd_opts = '--line-numbers --noheading'

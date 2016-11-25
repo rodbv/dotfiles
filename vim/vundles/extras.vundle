@@ -30,3 +30,12 @@ Bundle 'garbas/vim-snipmate'
 " # Auto Comment
 " #############################################################################
 Bundle "tomtom/tcomment_vim.git"
+
+" #############################################################################
+" # Vim Git Gutter
+" #############################################################################
+Bundle "vim-gitgutter"
+
+" dark column
+" highlight SignColumn guibg=233
+highlight SignColumn ctermbg=235

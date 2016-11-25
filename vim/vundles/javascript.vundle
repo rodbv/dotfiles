@@ -51,3 +51,7 @@ let g:jsdoc_input_description = 1
 let g:jsdoc_enable_es6 = 1
 let g:jsdoc_access_descriptions = 1
 
+" #############################################################################
+" # Vim JS Docummetation
+" #############################################################################
+Bundle 'othree/es.next.syntax.vim'
