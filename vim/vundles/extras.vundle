@@ -39,3 +39,20 @@ Bundle "vim-gitgutter"
 " dark column
 " highlight SignColumn guibg=233
 highlight SignColumn ctermbg=235
+
+" #############################################################################
+" # Force to repeting 
+" #############################################################################
+Bundle "takac/vim-hardtime"
+
+let g:hardtime_default_on = 3
+let g:hardtime_showmsg = 3
+let g:hardtime_ignore_buffer_patterns = [ "NERD.*"  ]
+let g:hardtime_ignore_quickfix = 3
+let g:hardtime_allow_different_key = 3
+
+
+" #############################################################################
+" # Open CSV files
+" #############################################################################
+Bundle "chrisbra/csv.vim"

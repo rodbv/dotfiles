@@ -30,3 +30,13 @@ Bundle "skwp/greplace.vim"
 set grepprg=ag
 
 let g:grep_cmd_opts = '--line-numbers --noheading'
+
+" #############################################################################
+" # Fuzzy file finder
+" #############################################################################
+" Bundle "ctrlpvim/ctrlp.vim"
+
+" let g:ctrlp_working_path_mode = 2
+" let g:ctrlp_max_files = 600
+" let g:ctrlp_max_depth = 5
+" noremap <silent> <Leader>bb :CtrlPBuffer<Return>" open buffer fuzz  y list"
