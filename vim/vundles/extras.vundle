@@ -34,7 +34,7 @@ Bundle "tomtom/tcomment_vim.git"
 " #############################################################################
 " # Vim Git Gutter
 " #############################################################################
-Bundle "vim-gitgutter"
+Bundle "airblade/vim-gitgutter"
 
 " dark column
 " highlight SignColumn guibg=233
