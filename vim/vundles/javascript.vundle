@@ -61,7 +61,7 @@ Bundle 'othree/es.next.syntax.vim'
 " #############################################################################
 " # Syntastic linter
 " #############################################################################
-Bundle 'crooloose/syntastic'
+Bundle 'scrooloose/syntastic'
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
