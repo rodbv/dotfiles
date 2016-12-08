@@ -11,6 +11,11 @@ To install packages you need firs clone [Vundle](https://github.com/VundleVim/Vu
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
+Install some global packages
+```bash
+npm install -g eslint babel-eslint eslint-plugin-react syntastic-react
+```
+
 After clonning open vim and intall bundles
 ```bash
 vim
