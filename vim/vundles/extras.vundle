@@ -43,7 +43,7 @@ highlight SignColumn ctermbg=235
 " #############################################################################
 " # Force to repeting 
 " #############################################################################
-Bundle "takac/vim-hardtime"
+" Bundle "takac/vim-hardtime"
 
 let g:hardtime_default_on = 3
 let g:hardtime_showmsg = 3
