@@ -20,3 +20,8 @@ Bundle "Raimondi/delimitMate"
 
 let delimitMate_expand_cr = 1
 
+" #############################################################################
+" # Use editor config files
+" #############################################################################
+Bundle "editorconfig/editorconfig-vim"
+
