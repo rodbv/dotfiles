@@ -231,3 +231,16 @@ echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sourc
 sudo apt-get update
 sudo apt-get install spotify-client
 
+
+###############################################################################
+# Post Install Setups
+###############################################################################
+# Reduce image size
+rm -rf /var/lib/apt/lists/*
+
+# Generate UTF-8 locale
+locale-gen en_US en_US.UTF-8
+
+# Reconfigure locales
+dpkg-reconfigure locales
+
