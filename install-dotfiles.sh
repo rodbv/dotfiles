@@ -1,16 +1,32 @@
 ###############################################################################
 # Clone Dotfiles Repo
 ###############################################################################
-git clone git@github.com:adroaldof/dotfiles.sh
+git clone git@github.com:adroaldof/dotfiles.sh ~/dotfiles
+
 
 ###############################################################################
 # Create All Symlinks to Dotfiles
 ###############################################################################
-ln -s ~/dotfiles/adro.theme ~/.oh-my-zsh/themes/adro.zsh-theme
-ln -s ~/dotfiles/fonts ~/.fonts                                         
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/vim ~/.vim
 ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/zshrc ~/.zshrc
+
+
+###############################################################################
+# Install Fonts
+###############################################################################
+ln -s ~/dotfiles/adro.theme ~/.oh-my-zsh/themes/adro.zsh-theme
+
+
+###############################################################################
+# Install Fonts
+###############################################################################
+ln -s ~/dotfiles/fonts ~/.fonts
 fc-cache -f -v
 
+
+###############################################################################
+# Install Vundle Bundles
+###############################################################################
+vim +BundleInstall! +qall > /dev/null 2>&1
