@@ -85,6 +85,46 @@ code --install-extension zhutian.swig
 
 
 ###############################################################################
+# Install Atom
+###############################################################################
+sudo add-apt-repository ppa:webupd8team/atom
+sudo apt-get update -qqy
+sudo apt-get install atom -qqy
+
+# Install some Atom Packages
+apm install atom-beautify
+apm install atom-typescript
+apm install atom-visual-studio-code-ui
+apm install color-picker
+apm install editorconfig
+apm install file-icons
+apm install git-plus
+apm install highlight-selected
+apm install language-docker
+apm install language-html-swig
+apm install language-nginx
+apm install linter
+apm install linter-eslint
+apm install linter-csslint
+apm install linter-scss-lint
+apm install minimap
+apm install minimap-cursorline
+apm install minimap-find-and-replace
+apm install minimap-git-diff
+apm install minimap-highlight-selected
+apm install minimap-linter
+apm install minimap-selection
+apm install minimap-split-diff
+apm install react
+apm install split-diff
+apm install sync-settings
+apm install tabs-to-spaces
+apm install terminal-panel
+apm install todo-show
+apm install visual-studio-dark-syntax
+apm install webbox-color
+
+###############################################################################
 # Install xClip
 ###############################################################################
 echo "Installing xClip"
