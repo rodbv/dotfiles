@@ -218,7 +218,7 @@ sudo apt-get install opera -qqy
 # Install SQLEletrom
 ###############################################################################
 echo "Installing SQLEletrom"
-curl -L https://github.com/sqlectron/sqlectron-gui/releases/download/v1.20.0/Sqlectron-1.20.0.deb > /tmp/sqlectron.deb
+curl -L https://github.com/sqlectron/sqlectron-gui/releases/download/v1.17.0/Sqlectron-1.20.0.deb > /tmp/sqlectron.deb
 sudo dpkg -i /tmp/sqlectron.deb && sudo apt install -f
 
 
