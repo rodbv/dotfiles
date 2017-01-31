@@ -1,3 +1,4 @@
+# This Docker file is aimed to test the install-dotfiles.sh script
 FROM ubuntu:latest
 ENV DEBIAN_FRONTEND noninteractive
 MAINTAINER Adroaldo de Andrade <adroaldof@gmail.com>
@@ -5,37 +6,20 @@ MAINTAINER Adroaldo de Andrade <adroaldof@gmail.com>
 # Set working directory to /root folder
 WORKDIR /root
 
-# Make some installs
-RUN apt-get update -y && \
-    apt-get install -y apt-utils git zsh vim tmux fontconfig build-essential libpq-dev && \
+# Copy dotfiles bash script installer
+COPY setup-machine.sh setup-machine.sh
+COPY install-dotfiles.sh install-dotfiles.sh
 
-    # Reduce image size
-    rm -rf /var/lib/apt/lists/* && \
+# Run bash script install
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends apt-utils && \
+    apt-get install sudo -y && \
+    useradd -m -c "Docker Sudoer" docker && \
+    echo "docker:docker" | chpasswd && \
+    adduser docker sudo
 
-    # Generate UTF-8 locale
-    locale-gen en_US en_US.UTF-8 && \
+RUN sh ./setup-machine.sh \
+    sh ./install-dotfiles.sh
 
-    # Reconfigure locales
-    dpkg-reconfigure locales && \
-
-    # Clone oh-my-zsh repo
-    git clone git://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh && \
-
-    # Set ZSH as default shell
-    chsh -s $(which zsh)
-
-# Copy configuration files to container
-COPY adro.zsh-theme .oh-my-zsh/themes/
-COPY gitconfig .gitconfig
-COPY tmux.conf .tmux.conf
-ADD vim .vim/
-ADD vim/fonts .fonts/
-COPY vimrc .vimrc
-COPY zshrc .zshrc
-
-# Rebuild font cache to use fonts
-RUN fc-cache -f -v
-
-# Install Vundle Bundles
-RUN vim +BundleInstall! +qall > /dev/null 2>&1
-
+USER docker
+CMD /bin/bash

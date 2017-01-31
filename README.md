@@ -4,15 +4,35 @@ This repo is aimed to make initial setup to a new Ubuntu Machine
 
 ## What it does
 
-1. Install ZSH, Tmux, Vim
-1. Add some fonts to `.fonts`
-1. Add `.vim/` and `.vimrc` configuration files
+1. Updates system
+1. Install essential packages
+1. Install Git
+1. Install Tweak Tools
+1. Install Curl
+1. Install Vim
+1. Install VSCode and some extensions
+1. Install Atom and some packages
+1. Install xClip
+1. Install NodeJS, NPM and NVM
+1. Install Docker and Docker-Compose
+1. Install ZSH and Oh-My-ZSH
+1. Install Tmux
+1. Install Chrome, Chromium and Opera Browsers
+1. Install SQLElectrom
+1. Install Spotify
+
+## Setup Dotfiles
+
+It will clone the repo and symlink all the following files
+
 1. Add `.tmux.conf` file
-1. Add `adro.zsh-theme` to `.oh-my-zsh/themes`
+1. Add `.vim/` and `.vimrc` configuration
 1. Add `.zshrc` file
+1. Add `adro.zsh-theme` to `.oh-my-zsh/themes`
+1. Install some fonts
 1. Intall Vim plugins
 
-## Test and/or Install
+## Install
 
 You can test this environment with a Docker container
 
@@ -23,13 +43,18 @@ cd dotfiles
 
 To test install [Docker](https://www.docker.com/) and run
 ```bash
-docker build <container_name> .
+docker build .
 docker run -it <container_name> /bin/zsh
 ```
 
-To install this run the follow script
+Setup a new machine
 ```bash
-. ./install-dotfiles.sh
+. ./setup-machine.sh
+```
+
+To install the Dotfiles
+```bash
+. ./setup-dotfiles.sh
 ```
 
 ---
