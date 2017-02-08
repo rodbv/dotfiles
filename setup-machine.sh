@@ -233,8 +233,17 @@ sudo apt-get install spotify-client
 
 
 ###############################################################################
+# Install Slack
+###############################################################################
+https://downloads.slack-edge.com/linux_releases/slack-desktop-2.4.2-amd64.deb > /tmp/slack.deb
+sudo dpkg -i /tmp/slack.deb && sudo apt install -f
+
+###############################################################################
 # Post Install Setups
 ###############################################################################
+# Clean packages
+sudo apt-get clean
+
 # Reduce image size
 rm -rf /var/lib/apt/lists/*
 
