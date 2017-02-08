@@ -143,11 +143,11 @@ snippet @ret
 # JSON
 ################################################################################
 snippet jsonp
-	JSON.parse(${0:object})
+	JSON.parse(${0:object});
 snippet jsons
-	JSON.stringify(${0:object})
+	JSON.stringify(${0:object});
 snippet jsonsp
-	JSON.stringify(${0:object}, null, 2)
+	JSON.stringify(${0:object}, null, 2);
 ################################################################################
 # Debuggers
 ################################################################################
@@ -164,6 +164,6 @@ snippet cll
 snippet cl
 	console.log('${1:varName}', $1);
 snippet cls
-	console.log('${1:varName}', JSON.stringify($1, null, 2))
+	console.log('${1:varName}', JSON.stringify($1, null, 2));
 snippet ct
-	console.time(${0:label})
+	console.time(${0:label});
